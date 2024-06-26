@@ -1,0 +1,82 @@
+version: '3'
+
+services:
+  plex:
+    image: plexinc/pms-docker:latest
+    environment:
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+    ports:
+      - 32400:32400
+    volumes:
+      - ./plex-data:/config
+      - ./media:/data
+    networks:
+      - media-network
+
+  torrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    environment:
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+      - WEBUI_PORT=9091
+    volumes:
+      - ./qbittorrent-data:/config
+      - ./downloads:/downloads
+    ports:
+      - 9091:9091
+      - 6881:6881
+      - 6881:6881/udp
+    networks:
+      - media-network
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    environment:
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+    ports:
+      - 8989:8989
+    volumes:
+      - ./sonarr-data:/config
+      - ./downloads:/downloads
+      - ./media/tv:/tv
+    networks:
+      - media-network
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    environment:
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+    ports:
+      - 7878:7878
+    volumes:
+      - ./radarr-data:/config
+      - ./downloads:/downloads
+      - ./media/movies:/movies
+    networks:
+      - media-network
+
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    environment:
+      - AUTO_UPDATE=true #optional
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+    ports:
+      - 9117:9117
+    volumes:
+      - ./jackett-data:/config
+      - ./downloads:/downloads
+    networks:
+      - media-network
+
+networks:
+  media-network:
+    driver: bridge
