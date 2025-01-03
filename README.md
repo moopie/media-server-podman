@@ -4,8 +4,15 @@
 
 qbittorrent uses port `9091` for WEBUI for historical reasons (transmission-bt used it)
 
-### Usage:
+### Usage
 
 ```sh
 $ podman-compose up -d
+```
+
+Use systemd to persist the mediaserver between reboots
+
+```sh
+$ podman-compose systemd -a create-unit
+$ podman-compose systemd -a register
 ```
