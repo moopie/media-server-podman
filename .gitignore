@@ -6,3 +6,5 @@ plex-data/
 qbittorrent-data/
 radarr-data/
 sonarr-data/
+
+.DS_Store
