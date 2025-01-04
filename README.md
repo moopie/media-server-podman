@@ -16,3 +16,7 @@ Use systemd to persist the mediaserver between reboots
 $ podman-compose systemd -a create-unit
 $ podman-compose systemd -a register
 ```
+
+### Other stuff
+
+Cool list of trackers for qbittorrent: https://github.com/ngosang/trackerslist/
