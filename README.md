@@ -1,8 +1,18 @@
 # Media Server 0.1
 
-### Plex Sonarr Radarr Qbittorrent Jackett
+This podman-compose sets up next services:
 
-qbittorrent uses port `9091` for WEBUI for historical reasons (transmission-bt used it)
+- plex
+- sonarr
+- radarr
+- qbittorrent
+- jackett
+
+### Notes
+
+qbittorrent uses port `9091` for WEBUI due to historical reasons (it was used by transmission-bt)
+
+Cool list of trackers for qbittorrent: https://github.com/ngosang/trackerslist/
 
 ### Usage
 
@@ -16,7 +26,3 @@ Use systemd to persist the mediaserver between reboots
 $ podman-compose systemd -a create-unit
 $ podman-compose systemd -a register
 ```
-
-### Other stuff
-
-Cool list of trackers for qbittorrent: https://github.com/ngosang/trackerslist/
