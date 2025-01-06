@@ -20,7 +20,7 @@ Cool list of trackers for qbittorrent: https://github.com/ngosang/trackerslist/
 $ podman-compose up -d
 ```
 
-Use systemd to persist the mediaserver between reboots
+Use systemd to persist the media server between reboots
 
 ```sh
 $ podman-compose systemd -a create-unit
