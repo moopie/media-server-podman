@@ -3,4 +3,5 @@
 set -x
 
 podman-compose down
-podman-compose up -d --pull
+podman-compose pull
+podman-compose up -d
