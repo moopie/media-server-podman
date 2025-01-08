@@ -77,6 +77,19 @@ services:
     networks:
       - media-network
 
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    environment:
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+    volumes:
+      - ./overseerr-data:/config
+    ports:
+      - 5055:5055
+    networks:
+      - media-network
+
 networks:
   media-network:
     driver: bridge
