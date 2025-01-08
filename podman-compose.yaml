@@ -65,7 +65,7 @@ services:
   jackett:
     image: lscr.io/linuxserver/jackett:latest
     environment:
-      - AUTO_UPDATE=true #optional
+      - AUTO_UPDATE=false #optional
       - PUID=1000
       - PGID=985
       - TZ=Asia/Jerusalem
