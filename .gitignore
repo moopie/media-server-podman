@@ -1,10 +1,12 @@
 downloads/
 media/
 certs/
+
 jackett-data/
 plex-data/
 qbittorrent-data/
 radarr-data/
 sonarr-data/
+overseerr-data/
 
 .DS_Store
