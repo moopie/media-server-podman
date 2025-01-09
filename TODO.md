@@ -1,6 +1,4 @@
-# Stuff I should do:
-
-### 1. Add nginx
+- Add `nginx`
 
 ```yaml
   nginx:
@@ -14,3 +12,5 @@
     networks:
       - media-network
 ```
+
+- Support `docker-compose`

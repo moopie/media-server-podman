@@ -5,6 +5,7 @@ This podman-compose sets up next services:
 - plex
 - sonarr
 - radarr
+- overseerr
 - qbittorrent
 - jackett
 
