@@ -7,14 +7,14 @@ This podman-compose sets up next services:
 - radarr
 - overseerr
 - qbittorrent
-- prowlerr
-- flareserverr
+- prowlarr
+- flaresolverr
 
 ### Notes
 
 - qbittorrent uses port `9091` for WEBUI due to historical reasons (it was used by transmission-bt)
 - Cool list of trackers for qbittorrent: https://github.com/ngosang/trackerslist/
-- flareserverr is required to bypass solarflare ddos protections
+- flaresolverr is required to bypass cloudflare ddos protections
 
 ### Usage
 
