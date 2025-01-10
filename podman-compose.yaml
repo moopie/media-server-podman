@@ -62,21 +62,6 @@ services:
     networks:
       - media-network
 
-  jackett:
-    image: lscr.io/linuxserver/jackett:latest
-    environment:
-      - AUTO_UPDATE=false #optional
-      - PUID=1000
-      - PGID=985
-      - TZ=Asia/Jerusalem
-    ports:
-      - 9117:9117
-    volumes:
-      - ./jackett-data:/config
-      - ./downloads:/downloads
-    networks:
-      - media-network
-
   overseerr:
     image: lscr.io/linuxserver/overseerr:latest
     environment:
@@ -97,6 +82,29 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./certs:/etc/nginx/certs
+    networks:
+      - media-network
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    environment:
+      - PUID=1000
+      - PGID=985
+      - TZ=Asia/Jerusalem
+    volumes:
+      - ./prowlarr-data:/config
+    ports:
+      - 9696:9696
+    networks:
+      - media-network
+  
+  flaresolverr:
+    # DockerHub mirror flaresolverr/flaresolverr:latest
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    environment:
+      - TZ=Asia/Jerusalem
+    ports:
+      - 8191:8191
     networks:
       - media-network
 

@@ -3,6 +3,7 @@ media/
 certs/
 
 jackett-data/
+prowlarr-data/
 plex-data/
 qbittorrent-data/
 radarr-data/
