@@ -97,9 +97,8 @@ services:
       - 9696:9696
     networks:
       - media-network
-  
+
   flaresolverr:
-    # DockerHub mirror flaresolverr/flaresolverr:latest
     image: ghcr.io/flaresolverr/flaresolverr:latest
     environment:
       - TZ=Asia/Jerusalem
