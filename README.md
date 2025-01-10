@@ -27,3 +27,10 @@ Use systemd to persist the media server between reboots
 $ podman-compose systemd -a create-unit
 $ podman-compose systemd -a register
 ```
+
+Nginx runs on port `8080` because users cant start things on port `80`
+Instead use iptables to redirect `80` to `8080`
+
+```sh
+$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+```
