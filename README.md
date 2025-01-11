@@ -1,6 +1,6 @@
 # Media Server Stack
 
-This podman-compose yaml sets up these services:
+This `podman-compose` spec sets up these services:
 
 - plex
 - sonarr
