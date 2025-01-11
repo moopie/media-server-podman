@@ -13,7 +13,7 @@ This podman-compose yaml sets up these services:
 
 ### Notes
 
-- `qbittorrent` uses port `9091` for WEBUI due to historical reasons (it was used by `transmission`)
+- `qbittorrent` uses port `9091` for `WEBUI` due to historical reasons (it was used by `transmission`)
 - Cool list of trackers for `qbittorrent`: https://github.com/ngosang/trackerslist/
 - `flaresolverr` is required to bypass cloudflare ddos protections
 - Replaced `jackett` with `prowlarr` because it can sync up indexers in `sonarr` and `radarr` on it's own
