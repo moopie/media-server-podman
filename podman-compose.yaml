@@ -75,16 +75,6 @@ services:
     networks:
       - media-network
 
-  nginx:
-    image: nginx:latest
-    ports:
-      - 8080:80
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./certs:/etc/nginx/certs
-    networks:
-      - media-network
-
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     environment:

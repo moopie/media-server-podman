@@ -9,7 +9,6 @@ This `podman-compose` spec sets up these services:
 - qbittorrent
 - prowlarr
 - flaresolverr
-- nginx
 
 ### Notes
 
@@ -29,12 +28,4 @@ Use `systemd` to persist the stack between reboots
 ```sh
 $ podman-compose systemd -a create-unit
 $ podman-compose systemd -a register
-```
-
-`nginx` runs on port `8080` because non-root users cant bind on port `80` and I am going for a rootless setup
-
-Instead use iptables to redirect the port `80` to `8080`
-
-```sh
-$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 ```
