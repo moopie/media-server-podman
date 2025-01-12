@@ -13,7 +13,7 @@ services:
       - ./plex-data:/config
       - ./media:/data
     networks:
-      - media-network
+      - media
 
   torrent:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -30,7 +30,7 @@ services:
       - 6881:6881
       - 6881:6881/udp
     networks:
-      - media-network
+      - media
 
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
@@ -45,7 +45,7 @@ services:
       - ./downloads:/downloads
       - ./media/tv:/tv
     networks:
-      - media-network
+      - media
 
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -60,7 +60,7 @@ services:
       - ./downloads:/downloads
       - ./media/movies:/movies
     networks:
-      - media-network
+      - media
 
   overseerr:
     image: lscr.io/linuxserver/overseerr:latest
@@ -73,7 +73,7 @@ services:
     ports:
       - 5055:5055
     networks:
-      - media-network
+      - media
 
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
@@ -86,7 +86,7 @@ services:
     ports:
       - 9696:9696
     networks:
-      - media-network
+      - media
 
   flaresolverr:
     image: ghcr.io/flaresolverr/flaresolverr:latest
@@ -95,8 +95,8 @@ services:
     ports:
       - 8191:8191
     networks:
-      - media-network
+      - media
 
 networks:
-  media-network:
-    driver: bridge
+  media:
+    external: true
