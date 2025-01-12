@@ -1,3 +1,3 @@
 - ssl
 - Support `docker-compose` [optional]
-- Instead of using `latest` images set up a proper beesioning control
+- Instead of using `latest` images set up a proper versioning control
