@@ -22,7 +22,7 @@ This `podman-compose` spec sets up these services:
 Create a network with the name `media`
 
 ```sh
-podman network create media
+$ podman network create media
 ```
 
 Start the stack
