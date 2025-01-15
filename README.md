@@ -19,6 +19,14 @@ This `podman-compose` spec sets up these services:
 
 ### Usage
 
+Create a network with the name `media`
+
+```sh
+podman network create media
+```
+
+Start the stack
+
 ```sh
 $ podman-compose up -d
 ```
@@ -29,3 +37,4 @@ Use `systemd` to persist the stack between reboots
 $ podman-compose systemd -a create-unit
 $ podman-compose systemd -a register
 ```
+
